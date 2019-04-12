@@ -1,0 +1,27 @@
+<!-- <p>
+  wish-list works!
+</p>
+
+<h3>Cart Info</h3>
+<table border="1">
+    <tr>
+        <th>Option</th>
+        
+    </tr>
+    <tr *ngFor="let product of products">
+        <td align="center">
+            <a (click)="remove(product.id)">X</a>
+        </td>
+        <td>{{product.name}}</td>
+        <td>
+            <img src="{{product.photo}}" width="50">
+        </td>
+        <td>{{product.price}}</td>
+    </tr>
+    
+</table>
+ -->
+
+
+<span class="dropdown-item" *ngFor="let product of products"><a (click)="remove(product.id)">X</a>{{product.name}}</span> 
+

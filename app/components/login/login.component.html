@@ -1,0 +1,24 @@
+<br>
+<h2 class="text-center">Login</h2>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputName">Name</label>
+          <input type="text" class="form-control" id="exampleInputName" formControlName="name" aria-describedby="nameHelp" placeholder="Enter name" name="name">
+          <span *ngIf="loginForm.touched && !loginForm.get('name').valid" class="help-block">please enter a valid name!</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Enter Password" name="password">
+          <span *ngIf="loginForm.touched && !loginForm.get('password').valid" class="help-block">please enter a valid password!</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <hr>
+      <p> didn't have acount yet ? <a [routerLink]="['/register']">Signup</a></p>
+    </div>
+  </div>
+</div>

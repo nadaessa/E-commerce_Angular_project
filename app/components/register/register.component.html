@@ -1,0 +1,27 @@
+<br>
+<h2 class="text-center">Registeration</h2>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputName">Name</label>
+          <input type="text" class="form-control" id="exampleInputName" formControlName="name" aria-describedby="nameHelp" placeholder="Enter name" name="name">
+          <span *ngIf="signupForm.touched && !signupForm.get('name').valid" class="help-block">please enter a valid name!</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+          <span *ngIf="signupForm.touched && !signupForm.get('email').valid" class="help-block">please enter a valid email!</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Enter Password" name="password">
+          <span *ngIf="signupForm.touched && !signupForm.get('password').valid" class="help-block">please enter a valid password!</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

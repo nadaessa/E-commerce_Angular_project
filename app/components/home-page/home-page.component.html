@@ -1,0 +1,30 @@
+
+<!-----------navbar-------------------->
+<app-navigation-links></app-navigation-links>
+
+<!---------------Products---------------------->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let product of products">
+		<div class="my-list">
+			<img src="{{product.photo}}" alt="dsadas" />
+			<h3>{{product.name}}</h3>
+			<span>{{product.price}}$</span>
+			<div class="offer"></div>
+			<div class="detail">
+			<img src="{{product.photo}}" alt="dsadas" />
+			<a [routerLink]="['/cart', { id:product.id }]" class="btn btn-info">Add To Cart</a>
+			<a [routerLink]="['/singlepage', { id:product.id }]" class="btn btn-info">Add To wishlist</a>
+			<br>
+			<a [routerLink]="['/singlepage', { id:product.id }]" class="btn btn-info">Deatil</a>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+		
+
+
+		
+
+

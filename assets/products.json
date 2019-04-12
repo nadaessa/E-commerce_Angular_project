@@ -1,0 +1,11 @@
+[
+    { "id": "p01", "name": "HP Core i3 6th Gen", "price": 100, "photo": "hp_laptop_service_centers_in_guindy.png" },
+    { "id": "p02", "name": "name 2", "price": 200, "photo": "thumb2.gif" },
+    { "id": "p03", "name": "name 3", "price": 300, "photo": "thumb3.gif" },
+    { "id": "p04", "name": "name 4", "price": 100, "photo": "thumb4.gif" },
+    { "id": "p05", "name": "name 5", "price": 200, "photo": "thumb5.gif" },
+    { "id": "p06", "name": "name 6", "price": 300, "photo": "thumb6.gif" },
+    { "id": "p07", "name": "name 7", "price": 100, "photo": "thumb7.gif" },
+    { "id": "p08", "name": "name 8", "price": 200, "photo": "thumb8.gif" },
+    { "id": "p09", "name": "name 9", "price": 300, "photo": "thumb9.gif" }
+]
