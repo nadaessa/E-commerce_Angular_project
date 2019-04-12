@@ -15,8 +15,9 @@
           <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Enter Password" name="password">
           <span *ngIf="loginForm.touched && !loginForm.get('password').valid" class="help-block">please enter a valid password!</span>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form><br>
+      <span class="help-block">{{error}}</span>
       <hr>
       <p> didn't have acount yet ? <a [routerLink]="['/register']">Signup</a></p>
     </div>

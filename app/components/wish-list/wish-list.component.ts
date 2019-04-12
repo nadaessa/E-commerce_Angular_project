@@ -30,9 +30,20 @@ export class WishListComponent implements OnInit {
 					wishlist.push(JSON.stringify(product));
 					localStorage.setItem('wishlist', JSON.stringify(wishlist));
 				} else{
-          let wishlist: any = JSON.parse(localStorage.getItem('wishlist'));
-          wishlist.push(JSON.stringify(product));
-					localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+					let wishlist: any = JSON.parse(localStorage.getItem('wishlist'));
+					let index: number = -1;
+					for (var i = 0; i < wishlist.length; i++) {
+						let product: Product = JSON.parse(wishlist[i]);
+						if (product.id == id) {
+							index = i;
+							break;
+						}
+					}
+					if (index == -1) {
+						wishlist.push(JSON.stringify(product));
+						localStorage.setItem('wishlist', JSON.stringify(wishlist));
+					} 
         }
 				this.loadWishList();
 			} else {

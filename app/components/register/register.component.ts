@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { User } from 'src/app/models/user.model';
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -32,17 +31,14 @@ export class RegisterComponent implements OnInit {
     
   }
 
-  
-   onSubmit() {
+  onSubmit() {
     if (this.signupForm.valid) {
-          var user: any = {
-            userData: this.signupForm.value,
-            logged: 1
-          };
-          localStorage.setItem('user', JSON.stringify(user));
-          this.router.navigate(['/']);
+      var user: any = {
+        userData: this.signupForm.value,
+        logged: 1
+      };
+      localStorage.setItem('user', JSON.stringify(user));
+      this.router.navigate(['/home']);
     }
-    } 
-  
-
+  } 
 }

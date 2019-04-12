@@ -22,7 +22,8 @@ import { UsernameComponent } from './components/username/username.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: AppComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'cart', component: CartComponent },
   { path: 'wishlist', component: WishListComponent },
   { path: 'login', component: LoginComponent },

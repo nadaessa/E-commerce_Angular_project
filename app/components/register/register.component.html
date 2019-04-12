@@ -20,8 +20,10 @@
           <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Enter Password" name="password">
           <span *ngIf="signupForm.touched && !signupForm.get('password').valid" class="help-block">please enter a valid password!</span>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Signup</button>
       </form>
+      <hr>
+      <p>  have acount ? <a [routerLink]="['/login']">Login</a></p>
     </div>
   </div>
 </div>

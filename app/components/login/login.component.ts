@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  public error:string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,19 +21,23 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = new FormGroup({
       'name' : new FormControl(null , Validators.required),
-      'password' : new FormControl(null , [Validators.required,Validators.minLength(8)]),
+      'password' : new FormControl(null , Validators.required),
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-          var user: any = {
-            userData: this.loginForm.value,
-            logged: 1
-          };
-          localStorage.setItem('user', JSON.stringify(user));
-          this.router.navigate(['/']);
+      let user: any = JSON.parse(localStorage.getItem('user'));
+      if ( user.userData.name == this.loginForm.value.name && user.userData.password == this.loginForm.value.password) {
+        user.logged = 1;
+        localStorage.setItem('user', JSON.stringify(user)); 
+        this.router.navigate(['/home']); 
+      } else {
+        this.error = "invalid username or password";
+
+      }
+
     }
-    } 
+  } 
 
 }
